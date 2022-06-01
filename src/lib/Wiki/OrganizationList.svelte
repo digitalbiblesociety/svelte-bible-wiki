@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from "svelte"
 	import { browser } from '$app/env'
-	import { Datatable } from "svelte-simple-datatables"
+	import { Datatable } from "sveltekit-datatables"
 	import Banner from "../Banner.svelte";
 
 	export let locale

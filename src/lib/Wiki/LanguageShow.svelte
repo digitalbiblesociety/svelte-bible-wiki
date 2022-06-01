@@ -3,7 +3,7 @@
 	import Banner from "../Banner.svelte";
 	import StatBlock from "../StatBlock.svelte";
 	import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@rgossiaux/svelte-headlessui';
-	import { Datatable } from "svelte-simple-datatables"
+	import { Datatable } from "sveltekit-datatables"
 
 	export let id
 	export let locale

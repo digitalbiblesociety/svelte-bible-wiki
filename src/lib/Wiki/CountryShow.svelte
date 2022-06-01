@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte'
 	import { browser } from '$app/env'
-	import { Datatable } from 'svelte-simple-datatables'
+	import { Datatable } from 'sveltekit-datatables'
 	import FetchWikiSidebar from '../API/FetchWikiSidebar.js'
 
 	let infobox;
@@ -23,10 +23,7 @@
 			</a>
 		</td>
 		<td class="hidden whitespace-nowrap px-6 py-4 text-sm text-gray-900 sm:table-cell">${row.iso}</td>
-		<td class="hidden whitespace-nowrap px-6 py-4 text-sm text-gray-900 sm:table-cell">${row.bibles_count}</td>
 	</tr>`
-
-	console.log(country.languages)
 
 	let rows;
 </script>
@@ -46,7 +43,6 @@
 					<thead>
 						<th data-key="name" class="sortable">Name</th>
 						<th data-key="iso" class="sortable hidden sm:table-cell">Iso</th>
-						<th data-key="bc" class="sortable hidden md:table-cell">{translations?.thead?.bibles}</th>
 					</thead>
 					<tbody>
 						{#if $rows}

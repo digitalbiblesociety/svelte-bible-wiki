@@ -1,7 +1,7 @@
 	<script>
 		import { onMount } from "svelte"
 		import { browser } from '$app/env'
-		import { Datatable } from "svelte-simple-datatables"
+		import { Datatable } from "sveltekit-datatables"
 		import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@rgossiaux/svelte-headlessui';
 		import { page } from "$app/stores"
 

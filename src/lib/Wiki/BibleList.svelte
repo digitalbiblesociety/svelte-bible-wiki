@@ -1,7 +1,7 @@
 <script>
 import { onMount } from "svelte"
 import { browser } from '$app/env'
-import { Datatable } from "svelte-simple-datatables"
+import { Datatable } from "sveltekit-datatables"
 import Banner from "../Banner.svelte";
 
 export let translations;
@@ -47,7 +47,7 @@ const table_row = (row, locale) =>  `
 
 let rows
 
-const filters = [
+const filters = {customFilters:[
 	{
 		label: "Regions",
 		key: "country_id",
@@ -112,7 +112,7 @@ const filters = [
 			{ label: "All", value: 0 },
 		],
 	},
-]
+]}
 </script>
 
 <Banner 
@@ -131,7 +131,7 @@ const filters = [
 		classList="relative"
 		data={bibles}
 		bind:dataRows={rows}
-		filters={filters}>
+		settings={filters}>
 		<thead>
 			<th data-name="file_set" data-key="fs" class="hidden">file_set</th>
 			<th

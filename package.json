@@ -8,7 +8,6 @@
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
     "package": "svelte-kit package",
-    "package-publish": "npm run package && git branch -d package && git branch package && git rm -rf . && git checkout HEAD -- package && git mv ./package/* . --force",
     "preview": "svelte-kit preview",
     "test": "playwright test",
     "lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. .",
@@ -29,7 +28,7 @@
   "dependencies": {
     "@sveltejs/adapter-static": "^1.0.0-next.29",
     "lodash": "^4.17.21",
-    "svelte-simple-datatables": "github:jonbitgood/svelte-simple-datatables",
+    "sveltekit-datatables": "file:../sveltekit-datatables/package",
     "svelte2tsx": "^0.5.5"
   }
 }

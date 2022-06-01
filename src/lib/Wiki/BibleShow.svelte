@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from "svelte"
 	import Banner from "../Banner.svelte";
-	import { toArray, groupBy } from 'lodash';
+	import { groupBy,toArray } from 'lodash';
 
 	export let locale
 	export let id
@@ -9,22 +9,47 @@
 	let bible_links
 
 	export let translations = {
-		'print': 'Purchase a "Print Version" of this Bible',
-		'pdf': 'Direct Downloads of Ancient and Modern Texts',
-		'web': 'Websites we know of that host this Bible.',
-		'audio': 'Audio Bibles available for download',
-		'audio_web': 'Audio Bibles to listen to online',
-		'app': 'Bible Apps for your Mobile Devices.',
-		'archive': 'Bibles available in a Library or Collection',
-		'historic': 'Historic Bible Scans',
-		'cat': 'A Storage Site for Bible Data',
-		'video_web': 'Video Bibles to watch online',
+		'link_sections': {
+			'print': {
+				title: 'Purchase a "Print Version" of this Bible'
+			},
+			'pdf': {
+				title: 'Direct Downloads of Ancient and Modern Texts'
+			},
+			'web': {
+				title: 'Websites we know of that host this Bible.'
+			},
+			'audio': {
+				title: 'Audio Bibles available for download'
+			},
+			'audio_web': {
+				title: 'Audio Bibles to listen to online'
+			},
+			'app': {
+				title: 'Bible Apps for your Mobile Devices.'
+			},
+			'archive': {
+				title: 'Bibles available in a Library or Collection'
+			},
+			'historic': {
+				title: 'Historic Bible Scans'
+			},
+			'cat': {
+				title: 'A Storage Site for Bible Data'
+			},
+			'video_web': {
+				title: 'Video Bibles to watch online'
+			},
+		}
+
 	};
 
 	function fileSize(size) {
     	var i = Math.floor(Math.log(size) / Math.log(1024));
     	return (size / Math.pow(1024, i)).toFixed(2) * 1 + "\xa0" + ['B', 'kB', 'MB', 'GB', 'TB'][i];
 	}
+
+	console.log(translations)
 
 </script>
 {#if bible}
@@ -117,7 +142,6 @@
 					</div>
 					<div>
 						{#each toArray(groupBy(link_group_type, 'provider')) as link_group_provider}
-
 							<div class="bg-gray-100 flex flex-row justify-between p-4">
 								<div class="flex w-1/5 text-center justify-center place-items-center">{link_group_provider[0].provider}</div>
 								<div class="w-4/5 grid grid-cols-2">
@@ -140,7 +164,6 @@
 									{/each}
 								</div>
 							</div>
-
 						{/each}
 					</div>
 					</div>
