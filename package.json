@@ -1,0 +1,51 @@
+{
+  "name": "svelte-bible-wiki",
+  "version": "0.0.1",
+  "main": "./src/index.js",
+  "module": "./src/index.js",
+  "svelte": "./src/index.js",
+  "devDependencies": {
+    "@playwright/test": "^1.21.0",
+    "@rgossiaux/svelte-headlessui": "^1.0.0-beta.10",
+    "@sveltejs/adapter-auto": "next",
+    "@sveltejs/kit": "next",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-svelte3": "^3.2.1",
+    "prettier": "^2.5.1",
+    "prettier-plugin-svelte": "^2.5.0",
+    "svelte": "^3.44.0"
+  },
+  "type": "module",
+  "dependencies": {
+    "@sveltejs/adapter-static": "^1.0.0-next.29",
+    "lodash": "^4.17.21",
+    "sveltekit-datatables": "github:digitalbiblesociety/sveltekit-datatables",
+    "svelte2tsx": "^0.5.5"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    "./API/FetchWikiSidebar": "./API/FetchWikiSidebar.js",
+    "./Banner.svelte": "./Banner.svelte",
+    "./Breadcrumbs.svelte": "./Breadcrumbs.svelte",
+    "./Map/country-shapes": "./Map/country-shapes.js",
+    "./StatBlock.svelte": "./StatBlock.svelte",
+    "./Tabs/Tab.svelte": "./Tabs/Tab.svelte",
+    "./Tabs/TabList.svelte": "./Tabs/TabList.svelte",
+    "./Tabs/TabPanel.svelte": "./Tabs/TabPanel.svelte",
+    "./Tabs/Tabs.svelte": "./Tabs/Tabs.svelte",
+    "./Tabs/id": "./Tabs/id.js",
+    "./Tabs": "./Tabs/index.js",
+    "./Wiki/AlphabetList.svelte": "./Wiki/AlphabetList.svelte",
+    "./Wiki/AlphabetShow.svelte": "./Wiki/AlphabetShow.svelte",
+    "./Wiki/BibleList.svelte": "./Wiki/BibleList.svelte",
+    "./Wiki/BibleShow.svelte": "./Wiki/BibleShow.svelte",
+    "./Wiki/CountryList.svelte": "./Wiki/CountryList.svelte",
+    "./Wiki/CountryMap.svelte": "./Wiki/CountryMap.svelte",
+    "./Wiki/CountryShow.svelte": "./Wiki/CountryShow.svelte",
+    "./Wiki/LanguageList.svelte": "./Wiki/LanguageList.svelte",
+    "./Wiki/LanguageShow.svelte": "./Wiki/LanguageShow.svelte",
+    "./Wiki/OrganizationList.svelte": "./Wiki/OrganizationList.svelte",
+    "./Wiki/OrganizationShow.svelte": "./Wiki/OrganizationShow.svelte",
+    "./Wiki/ResourceList.svelte": "./Wiki/ResourceList.svelte"
+  }
+}
