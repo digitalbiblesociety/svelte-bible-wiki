@@ -6,6 +6,7 @@
 
 	export let locale
 	export let organizations
+	export let include_banner = true
 	export let translations = {
 		title: "Agencies",
 		subtitle: "",
@@ -40,6 +41,7 @@
 	let rows
 </script>
 
+{#if include_banner}
 <Banner 
 	locale={locale}
 	translations={translations}
@@ -48,6 +50,7 @@
 		{title:translations.tabs.fobai,url: 'organizations/fobai'}
 	]}
 	background="banner_organizations" />
+{/if}
 
 {#if organizations}
 	<div class="mx-auto">

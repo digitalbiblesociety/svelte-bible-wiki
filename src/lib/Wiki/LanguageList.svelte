@@ -8,6 +8,7 @@
 	export let subset = ''
 	export let languages
 	export let translations
+	export let include_banner = true
 	
 	let js = false
 	onMount(async () => {
@@ -58,6 +59,7 @@
 	let rows
 </script>
 
+{#if include_banner}
 <Banner 
 	locale={locale}
 	translations={translations}
@@ -66,6 +68,7 @@
 		{title:translations?.tabs?.maps ?? 'Maps', url: 'maps'},
 	]}
 	background="banner_languages" />
+{/if}
 
 {#if languages}
 <div class="mx-auto w-4/5 pt-8">

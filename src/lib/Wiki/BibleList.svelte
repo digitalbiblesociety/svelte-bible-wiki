@@ -8,6 +8,7 @@ export let translations;
 export let locale = 'en'
 export let subset = ''
 export let bibles
+export let include_banner = true
 
 onMount(async () => {
 	if(!bibles) {
@@ -115,14 +116,16 @@ const filters = {customFilters:[
 ]}
 </script>
 
+{#if include_banner}
 <Banner 
 	locale={locale}
 	translations={translations}
 	tabs={[
-			{title:translations?.tabs?.bibles ?? 'Bibles',url: 'bibles', count: bibles.length},
-			{title:translations?.tabs?.resources ?? 'Resources',url: 'organizations/resources'},
+		{title: translations?.tabs?.bibles ?? 'Bibles', url: 'bibles', count: bibles.length},
+		{title: translations?.tabs?.resources ?? 'Resources', url: 'organizations/resources'},
 	]}
 	background="banner_bibles" />
+{/if}
 
 {#if bibles}
 <div class="mx-auto py-8">

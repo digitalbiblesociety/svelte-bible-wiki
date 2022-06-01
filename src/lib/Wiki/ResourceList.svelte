@@ -6,6 +6,7 @@
 
 	export let locale
 	export let resources
+	export let include_banner = true
 	export let translations = {
 		title: "Resources",
 		subtitle: "",
@@ -37,6 +38,7 @@
 	let rows
 </script>
 
+{#if include_banner}
 <Banner 
 	locale={locale}
 	translations={translations} 
@@ -45,6 +47,7 @@
 		{title:translations.tabs.resources,url: 'organizations/resources', count: resources.length},
 	]}
 	background="https://images.bible.cloud/fab/banners/agencies.jpg" />
+{/if}
 
 {#if resources}
 	<div class="mx-auto">

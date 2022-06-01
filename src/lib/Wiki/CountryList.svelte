@@ -7,6 +7,7 @@
 	export let locale
 	export let subset
 	export let countries
+	export let include_banner = true
 	export let translations = {
 		title: "Countries",
 		subtitle: "",
@@ -35,6 +36,7 @@
 {#if countries}
 <div>
 	
+	{#if include_banner}
 	<Banner 
 		locale={locale}
 		translations={translations} 
@@ -43,6 +45,7 @@
 			{title:translations.tabs.maps,url: 'maps/countries'},
 		]}
 		background="banner_countries" />
+	{/if}
 
 	{#if browser}
 	<Datatable classList="relative mx-auto w-4/5" data="{countries}" bind:dataRows="{rows}">
