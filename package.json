@@ -28,7 +28,7 @@
   "dependencies": {
     "@sveltejs/adapter-static": "^1.0.0-next.29",
     "lodash": "^4.17.21",
-    "sveltekit-datatables": "file:../sveltekit-datatables/package",
+    "sveltekit-datatables": "github:digitalbiblesociety/sveltekit-datatables",
     "svelte2tsx": "^0.5.5"
   }
 }
