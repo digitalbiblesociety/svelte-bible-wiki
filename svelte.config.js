@@ -2,14 +2,16 @@ import adapter from '@sveltejs/adapter-static';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	kit: {
-		vite: {
-			server: {
-				strictPort: false,
-			},
-		},
-		adapter: adapter()
-	}
+    kit: {
+        adapter: adapter(),
+        browser: {
+            hydrate: false,
+        },
+        prerender: {
+            crawl: true,
+            enabled: true,
+        }
+    }
 };
 
 export default config;
