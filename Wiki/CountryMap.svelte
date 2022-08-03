@@ -1,6 +1,5 @@
 <script>
 	import { onMount } from 'svelte';
-	import { browser } from '$app/env'
 	import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@rgossiaux/svelte-headlessui';
 	import { Datatable } from 'svelte-simple-datatables';
 	import countryShapes from '../Map/country-shapes.js';

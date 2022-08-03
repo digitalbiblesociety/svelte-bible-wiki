@@ -5,7 +5,6 @@
 	import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@rgossiaux/svelte-headlessui';
 	import { Datatable } from "sveltekit-datatables"
 
-	export let id
 	export let locale
 	export let language
 
@@ -114,25 +113,25 @@ let stat_block = [
 	<TabList>
 		<div class="relative z-10 flex flex-row justify-center divide-x divide-gray-200 rounded-tl-lg rounded-tr-lg w-1/2 lg:w-1/3 mx-auto">
 		{#if language.bibles.length != 0}
-			<Tab class="flex flex-grow justify-center bg-gray-50 bg-opacity-50 text-gray-800 hover:text-gray-200 whitespace-nowrap py-2 text-sm">
+			<Tab class="flex flex-grow justify-center bg-gray-50 bg-opacity-50 text-gray-800 border-transparent hover:border-emerald-600 hover:bg-emerald-600 hover:text-gray-200 whitespace-nowrap py-2 border-b-2 text-sm">
 				Bibles
 				<span
-					class="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-sm font-medium text-gray-800">
+					class="bg-gray-100 text-gray-900 hidden ml-3 py-0.5 px-2.5 rounded-full text-xs md:inline-block">
 					{language.bibles.length}
 				</span>
 			</Tab>
 		{/if}
 		{#if language.films.length != 0}
-			<Tab class="flex flex-grow justify-center bg-gray-50 bg-opacity-50 text-gray-800 hover:text-gray-200 whitespace-nowrap py-2 text-sm">
+			<Tab class="flex flex-grow justify-center bg-gray-50 bg-opacity-50 text-gray-800 border-transparent hover:border-emerald-600 hover:bg-emerald-600 hover:text-gray-200 whitespace-nowrap py-2 border-b-2 text-sm">
 			Films
 				<span
-					class="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-sm font-medium text-gray-800">
+					class="bg-gray-100 text-gray-900 hidden ml-3 py-0.5 px-2.5 rounded-full text-xs md:inline-block">
 					{language.films.length}
 				</span>
 			</Tab>
 		{/if}
 		{#if language.resources.length != 0}
-		<Tab class="flex flex-grow justify-center bg-gray-50 bg-opacity-50 text-gray-800 hover:text-gray-200 whitespace-nowrap py-2 text-sm">
+		<Tab class="flex flex-grow justify-center bg-gray-50 bg-opacity-50 text-gray-800 border-transparent hover:border-emerald-600 hover:bg-emerald-600 hover:text-gray-200 whitespace-nowrap py-2 border-b-2 text-sm">
 			Resources
 				<span
 					class="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-sm font-medium text-gray-800">

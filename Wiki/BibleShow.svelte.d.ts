@@ -3,7 +3,6 @@
 /** @typedef {typeof __propDef.slots}  BibleShowSlots */
 export default class BibleShow extends SvelteComponentTyped<{
     locale: any;
-    id: any;
     bible: any;
     translations?: {
         link_sections: {
@@ -50,7 +49,6 @@ import { SvelteComponentTyped } from "svelte";
 declare const __propDef: {
     props: {
         locale: any;
-        id: any;
         bible: any;
         translations?: {
             link_sections: {

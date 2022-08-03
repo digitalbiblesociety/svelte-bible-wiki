@@ -84,7 +84,7 @@
 			<th data-key="rc" class="sortable hidden lg:table-cell">{translations?.thead?.films ?? 'films'}</th>
 		</thead>
 		<tbody>
-			{#if $rows}
+			{#if rows}
 				{#each $rows as row}
 					{@html table_row(row, locale)}
 				{/each}

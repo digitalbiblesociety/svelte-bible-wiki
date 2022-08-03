@@ -1,6 +1,5 @@
 	<script>
 		import { onMount } from "svelte"
-		import { browser } from '$app/env'
 		import { Datatable } from "sveltekit-datatables"
 		import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@rgossiaux/svelte-headlessui';
 		import { page } from "$app/stores"
@@ -47,7 +46,7 @@
 	<section class="body-font text-gray-600">
 		<div class="container mx-auto px-5 py-24">
 			<div class="mb-20 flex w-full flex-col text-center">
-				<h1 class="title-font mb-4 text-2xl text-gray-900 sm:text-3xl">
+				<h1 class="title-font mb-4 text-2xl text-gray-900 dark:text-gray-200 sm:text-3xl">
 					Script Features
 				</h1>
 				<div>

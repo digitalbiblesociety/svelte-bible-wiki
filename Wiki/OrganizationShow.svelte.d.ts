@@ -2,7 +2,6 @@
 /** @typedef {typeof __propDef.events}  OrganizationShowEvents */
 /** @typedef {typeof __propDef.slots}  OrganizationShowSlots */
 export default class OrganizationShow extends SvelteComponentTyped<{
-    id: any;
     locale: any;
     organization: any;
 }, {
@@ -15,7 +14,6 @@ export type OrganizationShowSlots = typeof __propDef.slots;
 import { SvelteComponentTyped } from "svelte";
 declare const __propDef: {
     props: {
-        id: any;
         locale: any;
         organization: any;
     };

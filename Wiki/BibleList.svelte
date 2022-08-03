@@ -102,7 +102,7 @@ const filters = {customFilters:[
 			{ label: "audio_web", value: "audio_web" },
 			{ label: "archive", value: "archive" },
 			{ label: "audio", value: "audio" },
-			{ label: "archiveaudio", value: "archiveaudio" },
+			{ label: "archive_audio", value: "archive_audio" },
 		],
 	},
 	{
@@ -161,7 +161,7 @@ const filters = {customFilters:[
 			</th>
 		</thead>
 		<tbody>
-			{#if rows}
+			{#if rows && $rows}
 				{#each $rows as row}
 					{@html table_row(row, locale)}
 				{/each}

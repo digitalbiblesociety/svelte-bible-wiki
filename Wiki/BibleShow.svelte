@@ -4,9 +4,7 @@
 	import { groupBy,toArray } from 'lodash';
 
 	export let locale
-	export let id
 	export let bible
-	let bible_links
 
 	export let translations = {
 		'link_sections': {
@@ -48,8 +46,6 @@
     	var i = Math.floor(Math.log(size) / Math.log(1024));
     	return (size / Math.pow(1024, i)).toFixed(2) * 1 + "\xa0" + ['B', 'kB', 'MB', 'GB', 'TB'][i];
 	}
-
-	console.log(translations)
 
 </script>
 {#if bible}

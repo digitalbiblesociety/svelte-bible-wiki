@@ -3,7 +3,6 @@
 /** @typedef {typeof __propDef.slots}  LanguageShowSlots */
 export default class LanguageShow extends SvelteComponentTyped<{
     locale: any;
-    id: any;
     language: any;
     translations?: {
         title: string;
@@ -21,7 +20,6 @@ import { SvelteComponentTyped } from "svelte";
 declare const __propDef: {
     props: {
         locale: any;
-        id: any;
         language: any;
         translations?: {
             title: string;

@@ -4,16 +4,10 @@
 	import { Datatable } from "sveltekit-datatables"
 	import Breadcrumbs from "../Breadcrumbs.svelte"
 
-	export let id
+
 	export let locale
 	export let organization
 	let rows
-
-	onMount(async () => {
-		if(!organization) {
-			organization = await fetch(`/data/organizations/${id}.json`).then(response => response.json())
-		}
-	})
 
 	const table_row = (row, locale) =>  `
 	<tr>

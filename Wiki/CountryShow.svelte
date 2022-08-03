@@ -5,29 +5,31 @@
 	import FetchWikiSidebar from '../API/FetchWikiSidebar.js'
 
 	let infobox;
-	export let id;
 	export let locale;
 	export let country;
-	export let translations;
-
-	onMount(async () => {
-//		infobox = await FetchWikiSidebar(country.name, locale ?? 'en');
-	})
+	export let translations = {
+		'population': 'Population',
+		'languages': 'Languages',
+		'official_language': 'Official Language',
+		'religion_primary': 'Primary Religion',
+		'world_watch_list': 'World Watch List',
+		'persecution_type': 'Persecution Type',
+		'overview': 'Overview',
+	}
 
 	const table_row = (row, locale) =>  `
-	<tr>
-		<td class="whitespace-nowrap px-6 py-4 text-sm text-gray-900">
+	<tr class="py-4 text-sm">
+		<td class="whitespace-nowrap px-6 text-gray-900 dark:text-gray-200">
 			<a href=/${locale}/languages/${row.iso}>
-				<div class="text-sm text-gray-900 dark:text-gray-200">${row.name}</div>
-				<div class="text-xs italic text-gray-500">${row.autonym}</div>
+				<div>${row.name}</div>
+				<div class="text-xs italic text-gray-500 dark:text-gray-300">${row.autonym}</div>
 			</a>
 		</td>
-		<td class="hidden whitespace-nowrap px-6 py-4 text-sm text-gray-900 sm:table-cell">${row.iso}</td>
+		<td class="hidden whitespace-nowrap px-6 sm:table-cell">${row.iso}</td>
 	</tr>`
 
 	let rows;
 </script>
-
 
 	<div class="flex flex-col bg-gradient-to-br from-primary-500 to-secondary-500 dark:from-primary-700 dark:to-secondary-700 xl:rounded-tl-xl xl:rounded-tr-xl text-gray-100 text-2xl text-center h-32">
 		{#if country}
@@ -37,9 +39,11 @@
 		{/if}
 	</div>
 
-	<div class="grid grid-cols-5 gap-4 px-8">
+	<div class="flex flex-row sm:flex-col">
+
+		<div class="w-1/2">
 				{#if browser}
-				<Datatable classList="col-span-3" data={country.languages} bind:dataRows={rows}>
+				<Datatable data={country.languages} bind:dataRows={rows}>
 					<thead>
 						<th data-key="name" class="sortable">Name</th>
 						<th data-key="iso" class="sortable hidden sm:table-cell">Iso</th>
@@ -53,10 +57,9 @@
 					</tbody>
 				</Datatable>
 				{/if}
-
 				{#if country}
 				<noscript>
-				<table class="col-span-3">
+				<table>
 					<thead>
 						<th data-key="name" class="sortable">Name</th>
 						<th data-key="iso" class="sortable hidden sm:table-cell">Iso</th>
@@ -67,46 +70,52 @@
 							{/each}
 					</tbody>
 				</table>
-			</noscript>
+				</noscript>
 				{/if}
+		</div>
 
-
-			<div class="col-span-2 py-16">
+			<div class="w-1/2 text-gray-900 dark:text-gray-200">
 				{#if country}
-				<dl>
+
+				<div class="prose dark:prose-invert px-4 py-8">
+					{country.overview}
+					<a class="block mt-2 text-center" href={country.url_wiki}> Wikipedia </a>
+				</div>
+
+				<dl class="mx-4">
 					<div class="flex justify-between py-1 text-sm">
-						<dt class="text-gray-500">Population</dt>
-						<dd class="text-gray-900 dark:text-gray-300">
+						<dt>{translations.population}</dt>
+						<dd>
 							{new Intl.NumberFormat(country.population, {
 								maximumSignificantDigits: 8
 							}).format(country.population)}
 						</dd>
 					</div>
 					<div class="flex justify-between py-1 text-sm">
-						<dt class="text-gray-500">Language</dt>
-						<dd class="text-gray-900 dark:text-gray-300">
-							<a href="/{locale}/languages/{country.official_language_iso}" class="text-blue-600">
+						<dt>{translations.official_language}</dt>
+						<dd>
+							<a class="underline" href="/{locale}/languages/{country.official_language_iso}">
 								{country.official_language}
 							</a>
 						</dd>
 					</div>
 					<div class="flex justify-between py-1 text-sm">
-						<dt class="text-gray-500">Languages</dt>
-						<dd class="text-gray-900 dark:text-gray-300">
+						<dt>{translations.languages}</dt>
+						<dd>
 							{country.languages.length}
 						</dd>
 					</div>
 					<div class="flex justify-between py-1 text-sm">
-						<dt class="text-gray-500">Primary Religion</dt>
-						<dd class="text-gray-900 dark:text-gray-300">
+						<dt>{translations.religion_primary}</dt>
+						<dd>
 							{country.religion_primary}
 						</dd>
 					</div>
 					{#if country.persecution}
 						<div class="mt-2 border-t border-b border-gray-200">
 							<div class="flex justify-between py-1 text-sm">
-								<dt class="text-gray-500">World Watch List</dt>
-								<dd class="text-gray-900 dark:text-gray-300">
+								<dt>{translations.world_watch_list}</dt>
+								<dd>
 									{country.persecution.rank}
 									<small class="align-top text-xs">
 										({country.persecution.score})
@@ -114,24 +123,13 @@
 								</dd>
 							</div>
 							<div class="flex flex-col py-1 text-sm">
-								<dt class="text-gray-500">Persecution Type</dt>
-								<dd class="text-gray-900 dark:text-gray-300">
+								<dt>{translations.persecution_type}</dt>
+								<dd>
 									{country.persecution.persecution_type}
 								</dd>
 							</div>
 						</div>
 					{/if}
-
-					<div class="py-1 text-sm">
-						<dt class="text-gray-500">overview</dt>
-						<dd class="text-gray-900 dark:text-gray-300">
-							{country.overview}
-						</dd>
-					</div>
-
-					<div class="py-1 text-sm">
-						<a class="text-gray-900 dark:text-gray-300" href={country.url_wiki}> Wikipedia </a>
-					</div>
 				</dl>
 				{/if}
 				{#if infobox}
