@@ -16,19 +16,16 @@
   "devDependencies": {
     "@playwright/test": "^1.21.0",
     "@rgossiaux/svelte-headlessui": "^1.0.0-beta.10",
-    "@sveltejs/adapter-auto": "next",
+    "@sveltejs/adapter-static": "^1.0.0-next.29",
     "@sveltejs/kit": "next",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-svelte3": "^3.2.1",
     "prettier": "^2.5.1",
     "prettier-plugin-svelte": "^2.5.0",
-    "svelte": "^3.44.0"
-  },
-  "type": "module",
-  "dependencies": {
-    "@sveltejs/adapter-static": "^1.0.0-next.29",
+    "svelte": "^3.44.0",
     "lodash": "^4.17.21",
-    "sveltekit-datatables": "github:digitalbiblesociety/sveltekit-datatables#package",
-    "svelte2tsx": "^0.5.5"
-  }
+    "svelte2tsx": "^0.5.5",
+    "sveltekit-datatables": "file:../sveltekit-datatables"
+  },
+  "type": "module"
 }

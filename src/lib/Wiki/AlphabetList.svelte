@@ -39,7 +39,7 @@
 				<th data-key="status" classList="sortable">Status</th>
 			</thead>
 			<tbody>
-				{#if $rows}
+				{#if rows}
 					{#each $rows as row, i}
 						{@html table_row(row, locale)}
 					{/each}

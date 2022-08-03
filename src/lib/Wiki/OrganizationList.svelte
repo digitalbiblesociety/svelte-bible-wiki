@@ -13,12 +13,6 @@
 		breadcrumbs: [],
 	};
 
-	onMount(async () => {
-		if(!organizations) {
-			organizations = await fetch(`/data/organizations.json`).then(response => response.json())
-		}
-	})
-
 	const table_row = (row, locale) =>  `
 	<tr>
 		<td class="hidden whitespace-nowrap px-6 py-4 text-gray-900">${row.id}</td>

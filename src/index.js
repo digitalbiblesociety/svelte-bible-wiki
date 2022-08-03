@@ -9,6 +9,7 @@ import LanguageShow from './lib/Wiki/LanguageShow.svelte'
 import OrganizationList from './lib/Wiki/OrganizationList.svelte'
 import OrganizationShow from './lib/Wiki/OrganizationShow.svelte'
 import ResourceList from './lib/Wiki/ResourceList.svelte'
+import FallbackFetch from './lib/fallback-fetch.js'
 
 export {
 	AlphabetList,
@@ -21,5 +22,6 @@ export {
 	LanguageShow,
 	OrganizationList,
 	OrganizationShow,
-	ResourceList
+	ResourceList,
+	FallbackFetch
 }

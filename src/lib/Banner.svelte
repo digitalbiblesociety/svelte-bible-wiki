@@ -34,7 +34,7 @@
 
 	<picture>
 		<!-- <source srcset="{background}.webp" type="image/webp"> -->
-		<source srcset="{background}.jpg" type="image/jpeg">
+		<source srcset="/img/{background}.jpg" type="image/jpeg">
 		<!-- svelte-ignore a11y-missing-attribute -->
 		<img class="object-cover h-full w-full inset-0 absolute z-10" src="/img/{background}.jpg" role="presentation" />
 	</picture>
